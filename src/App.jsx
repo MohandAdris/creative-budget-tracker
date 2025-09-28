@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './com
 import { Button } from './components/ui/button'
 import { Input } from './components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './components/ui/dialog'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './components/ui/dialog'
 import { Label } from './components/ui/label'
 import { Trash2, Plus, Calculator, DollarSign, TrendingUp, PieChart, Edit, FileText, Download } from 'lucide-react'
 import { PieChart as RechartsPieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
@@ -11,7 +11,7 @@ import './App.css'
 
 const EXPENSE_CATEGORIES = [
   'Video Production',
-  'Creative Services',
+  'Creative Services', 
   'Equipment Rental',
   'Software & Licenses',
   'Talent & Crew',
@@ -144,8 +144,7 @@ function App() {
     }
   }
 
-  const generatePDF = async () => {
-    // Simple PDF generation using browser's print functionality
+  const generatePDF = () => {
     const printWindow = window.open('', '_blank')
     const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0)
     const budgetVariance = budget - totalExpenses
@@ -156,7 +155,7 @@ function App() {
     printWindow.document.write(`
       <html>
         <head>
-          <title>Project Budget Summary</title>
+          <title>Creative Project Budget Summary</title>
           <style>
             body { font-family: Arial, sans-serif; margin: 20px; }
             .header { text-align: center; margin-bottom: 30px; }
@@ -448,12 +447,6 @@ function App() {
                       <span className="text-gray-600">Monthly Variance:</span>
                       <span className={`font-semibold text-lg ${budgetVariance >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                         ₪{budgetVariance.toFixed(2)}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center mt-1">
-                      <span className="text-sm text-gray-500">Variance %:</span>
-                      <span className={`text-sm ${budgetVariance >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                        {budget > 0 ? ((budgetVariance / budget) * 100).toFixed(1) : '0.0'}%
                       </span>
                     </div>
                   </div>
