@@ -2,20 +2,28 @@
 
 A comprehensive expense calculator designed specifically for marketing and video production companies. Track your campaign budgets, production costs, and analyze financial performance with Israeli Shekel (₪) currency support.
 
-## 🎯 Features
+## 🎯 Enhanced Features
 
-### **Expense Management**
-- Add, edit, and delete project expenses
-- Categorize expenses by production type
-- Date tracking for all expenses
-- Real-time expense calculations
+### **Advanced Expense Management**
+- **Full Editing Capability**: Edit expense names, amounts, dates, and categories after creation
+- **File Attachments**: Attach receipts, invoices, or contracts to each expense (optional)
+- **Smart Categorization**: Industry-specific categories for production companies
+- **Date-based Organization**: Track expenses chronologically with full date control
 
-### **Financial Analytics**
-- **Budget vs. Actual Analysis**: Compare planned budget against actual expenses
-- **Budget Variance Tracking**: Monitor overspend/underspend with percentage calculations
-- **Visual Budget Progress**: Color-coded progress bar (green/yellow/red based on usage)
-- **Category Breakdown**: Pie chart visualization of expenses by category
+### **Smart Financial Analytics**
+- **Early Warning System**: Budget progress bar turns **RED at 50%** usage (enhanced from 80%)
+- **Multi-Month Project Statistics**: Configure project duration and track total profit/loss
+- **Revenue Projections**: Set monthly revenue expectations for comprehensive analysis
+- **Real-time Variance Tracking**: Monitor overspend/underspend with percentage calculations
+- **Visual Budget Progress**: Enhanced color-coded indicators for better budget control
+- **Category Breakdown**: Interactive pie chart visualization of expenses by category
 - **Monthly Trends**: Bar chart showing expense patterns over time
+
+### **Professional Reporting**
+- **PDF Export Functionality**: Generate comprehensive project summaries
+- **Client-Ready Reports**: Professional formatting for stakeholder presentations
+- **Complete Financial Data**: Includes project statistics, expense details, and profit analysis
+- **Print-Friendly**: Optimized for both digital sharing and printing
 
 ### **Industry-Specific Categories**
 - Video Production
