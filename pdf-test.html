@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Export Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .summary { margin-bottom: 20px; }
+        .table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .table th, .table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .table th { background-color: #f2f2f2; }
+        .positive { color: green; }
+        .negative { color: red; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Creative Project Budget Summary</h1>
+        <p>PDF Export Test - Generated on <span id="date"></span></p>
+    </div>
+    
+    <div class="summary">
+        <h2>Project Overview</h2>
+        <p><strong>Monthly Budget:</strong> ₪5000.00</p>
+        <p><strong>Project Duration:</strong> 3 month(s)</p>
+        <p><strong>Monthly Revenue:</strong> ₪8000.00</p>
+        <p><strong>Total Project Budget:</strong> ₪15000.00</p>
+        <p><strong>Total Project Revenue:</strong> ₪24000.00</p>
+    </div>
+
+    <div class="summary">
+        <h2>Financial Summary</h2>
+        <p><strong>Monthly Expenses:</strong> ₪2500.00</p>
+        <p><strong>Monthly Variance:</strong> <span class="positive">₪2500.00</span></p>
+        <p><strong>Total Project Expenses:</strong> ₪7500.00</p>
+        <p><strong>Total Project Profit:</strong> <span class="positive">₪16500.00</span></p>
+    </div>
+
+    <h2>Expense Details</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Expense Name</th>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>9/28/2025</td>
+                <td>Video Equipment Rental</td>
+                <td>Equipment Rental</td>
+                <td>₪1200.00</td>
+            </tr>
+            <tr>
+                <td>9/28/2025</td>
+                <td>Creative Director Fee</td>
+                <td>Creative Services</td>
+                <td>₪800.00</td>
+            </tr>
+            <tr>
+                <td>9/28/2025</td>
+                <td>Adobe Creative Suite</td>
+                <td>Software & Licenses</td>
+                <td>₪500.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="generatePDF()">Export PDF Summary</button>
+
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleDateString();
+        
+        function generatePDF() {
+            // This is the same PDF generation function used in the React app
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(document.documentElement.outerHTML);
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+</body>
+</html>
